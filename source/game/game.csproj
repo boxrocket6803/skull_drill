@@ -4,7 +4,7 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Engine</StartupObject>
+    <StartupObject>Game</StartupObject>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
 	<AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="call $(ProjectDir)post_build.bat $(ProjectDir) $(OutDir)" />
+    <Exec Command="call $(ProjectDir)..\engine\post_build.bat $(ProjectDir)..\engine\ $(ProjectDir) $(OutDir)" />
   </Target>
 
 </Project>
