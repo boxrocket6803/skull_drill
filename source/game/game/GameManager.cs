@@ -6,7 +6,8 @@
 
 	public Model Model;
 	public override void Render() {
-		Model.Load("models/characters/human_base.bmdl")?.Render(Transform.Indentity);
+		if (Graphics.Stage == Graphics.RenderStage.Submit)
+			Model.Load("models/characters/human_base.bmdl")?.Draw(Transform.Indentity);
 		base.Render();
 	}
 }
