@@ -1,13 +1,14 @@
 ﻿public class GameManager : Scene.Object {
+	public Model Model;
 	public override void OnCreate() {
+		Model ??= Resource.Load<Model>("models/test/health_vial.bmdl");
 		Scene.Active.MainCamera = new Scene.Camera.Perspective();
 		base.OnCreate();
 	}
 
-	public Model Model;
 	public override void Render() {
 		if (Graphics.Stage == Graphics.RenderStage.Submit)
-			Model.Load("models/characters/human_base.bmdl")?.Draw(Transform.Indentity);
+			Model.Draw(Transform.Indentity);
 		base.Render();
 	}
 }
